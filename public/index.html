@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Chat Application</title>
+</head>
+<body>
+    <h1>Group Chat</h1>
+    <div id="chat-box"></div>
+    <input id="message" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io('http://localhost:3000');
+
+        socket.emit('joinRoom', { username: 'User1', room: 'Room1' });
+
+        socket.on('message', (msg) => {
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<p>${msg}</p>`;
+        });
+
+        function sendMessage() {
+            const message = document.getElementById('message').value;
+            socket.emit('chatMessage', message);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "group-chat-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha 'tests/**/*.mjs'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/chai": "^4.3.19",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.4",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "chai-http": "^5.0.0",
+    "mocha": "^10.7.3"
+  },
+  "type": "module"
+}
