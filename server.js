@@ -19,7 +19,7 @@ app.use(bodyparser.json());
 
 const PORT = config.app.port;
 
-
+const MONGO_URI = "mongodb+srv://krishnavikas:<Vikas2000@>@groupchatcluster.tagnz.mongodb.net/?retryWrites=true&w=majority&appName=GroupChatCluster";
 //Database connection
 mongoose.connect(`mongodb://${config.db.baseUrl}:${config.db.port}/${config.db.name}`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected successfully'))
